@@ -670,6 +670,114 @@ cartesian!(
     [i8, u8, i16, u16, i32, u32, i64, u64, f32, f64]
 );
 
+// x, y, z, w
+pub trait VecX<T> {
+    fn x(&self) -> T;
+    fn set_x(&mut self, x: T);
+}
+pub trait VecY<T> {
+    fn y(&self) -> T;
+    fn set_y(&mut self, x: T);
+}
+pub trait VecZ<T> {
+    fn z(&self) -> T;
+    fn set_z(&mut self, x: T);
+}
+pub trait VecW<T> {
+    fn w(&self) -> T;
+    fn set_w(&mut self, x: T);
+}
+
+impl<T> VecX<T> for Vec2<T>
+    where T: Copy {
+    fn x(&self) -> T {
+        self.data[0]
+    }
+    fn set_x(&mut self, x: T) {
+        self.data[0] = x
+    }
+}
+
+impl<T> VecY<T> for Vec2<T>
+    where T: Copy {
+    fn y(&self) -> T {
+        self.data[1]
+    }
+    fn set_y(&mut self, y: T) {
+        self.data[1] = y
+    }
+}
+
+impl<T> VecX<T> for Vec3<T>
+    where T: Copy {
+    fn x(&self) -> T {
+        self.data[0]
+    }
+    fn set_x(&mut self, x: T) {
+        self.data[0] = x
+    }
+}
+
+impl<T> VecY<T> for Vec3<T>
+    where T: Copy {
+    fn y(&self) -> T {
+        self.data[1]
+    }
+    fn set_y(&mut self, y: T) {
+        self.data[1] = y
+    }
+}
+
+impl<T> VecZ<T> for Vec3<T>
+    where T: Copy {
+    fn z(&self) -> T {
+        self.data[2]
+    }
+    fn set_z(&mut self, z: T) {
+        self.data[2] = z
+    }
+}
+
+impl<T> VecX<T> for Vec4<T>
+    where T: Copy {
+    fn x(&self) -> T {
+        self.data[0]
+    }
+    fn set_x(&mut self, x: T) {
+        self.data[0] = x
+    }
+}
+
+impl<T> VecY<T> for Vec4<T>
+    where T: Copy {
+    fn y(&self) -> T {
+        self.data[1]
+    }
+    fn set_y(&mut self, y: T) {
+        self.data[1] = y
+    }
+}
+
+impl<T> VecZ<T> for Vec4<T>
+    where T: Copy {
+    fn z(&self) -> T {
+        self.data[2]
+    }
+    fn set_z(&mut self, z: T) {
+        self.data[2] = z
+    }
+}
+
+impl<T> VecW<T> for Vec4<T>
+    where T: Copy {
+    fn w(&self) -> T {
+        self.data[3]
+    }
+    fn set_w(&mut self, w: T) {
+        self.data[3] = w
+    }
+}
+
 #[allow(unused_macros)]
 macro_rules! vec_type {
     ($Va:ident, $V:ident, $T:ident) => {
