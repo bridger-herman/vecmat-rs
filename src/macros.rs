@@ -5,7 +5,7 @@ macro_rules! cartesian_1 {
 		$(
 			$m!($x, $y);
 		)*
-		
+
 	);
 }
 
