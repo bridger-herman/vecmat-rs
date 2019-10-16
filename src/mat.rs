@@ -12,7 +12,7 @@ use std::slice;
 
 macro_rules! mat_struct {
     ($V:ident, $N:expr, $M:expr) => {
-        #[derive(Clone, Copy, Debug, PartialEq)]
+        #[derive(Clone, Copy, Debug, PartialEq, Serialize, Deserialize)]
         pub struct $V<T: Copy> {
             pub data: [T; $N * $M],
         }
